@@ -1,0 +1,33 @@
+{
+  "name": "csjs-example-app",
+  "version": "0.0.0",
+  "description": "example app using csjs",
+  "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
+  "bugs": "https://github.com/rtsao/csjs-example-app/issues",
+  "homepage": "https://github.com/rtsao/csjs-example-app",
+  "repository": "git@github.com:rtsao/csjs-example-app.git",
+  "keywords": [
+    "csjs"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdir -p dist && browserify src/main.js > dist/main.js && cp src/index.html dist/index.html"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "csjs-injectify"
+    ]
+  },
+  "license": "MIT",
+  "dependencies": {
+    "acorn": "^2.4.0",
+    "babelify": "^6.4.0",
+    "browserify": "^11.2.0",
+    "csjs": "https://github.com/rtsao/csjs/tarball/master",
+    "csjs-injectify": "https://github.com/rtsao/csjs-injectify/tarball/master",
+    "r-dom": "^2.1.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  }
+}

@@ -1,26 +1,17 @@
 const React = require('react');
-const r = require('r-dom');
+const styles = require('./common-styles');
+const hyperstyles = require('hyperstyles');
+const h = hyperstyles(React.createElement, styles);
 
 const Nav = require('./nav');
 
-module.exports = React.createClass({
+module.exports = () =>
 
-  getInitialState() {
-    return {
-      items: [
-        {title: 'home'},
-        {title: 'woo'},
-        {title: 'blah'}
-      ]
-    }
-  },
-
-  render() {
-    return (
-      r.div([
-        r(Nav, {items: this.state.items})
-      ])
-    );
-  }
-
-});
+  h('div', null,
+    h('div.blueText', 'asdf!'),
+    h(Nav, {items: [
+      {title: 'home'},
+      {title: 'woo'},
+      {title: 'blah'}
+    ]})
+  );

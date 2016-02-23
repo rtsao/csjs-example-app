@@ -8,6 +8,7 @@ module.exports = csjs`
 
   .nav {
     border: 1px solid black;
+    animation: ${common.fadeIn} 1s ease;
     background-color: ${green};
   }
 

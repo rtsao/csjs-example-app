@@ -6,4 +6,9 @@ module.exports = csjs`
     color: blue;
   }
 
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
 `;

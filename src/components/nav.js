@@ -1,11 +1,15 @@
 const React = require('react');
-const r = require('r-dom');
+const hyperstyles = require('hyperstyles');
 
 const styles = require('./nav-styles');
-
-const Nav = ({items}) => r.ul({className: styles.nav}, items.map(NavItem));
-
-const NavItem = ({title}) => r.li({className: styles.navItem}, title);
+const h = hyperstyles(React.createElement, styles);
 
 module.exports = Nav;
 
+function Nav({items}) {
+  return h('ul.nav', items.map(NavItem));
+}
+
+function NavItem({title}, i) {
+  return h('li.navItem', {key: i}, title);
+}

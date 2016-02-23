@@ -1,5 +1,8 @@
-import ReactDOM from 'react-dom';
-import App from './components/app';
-import r from 'r-dom';
+const React = require('react');
+const ReactDOM = require('react-dom');
 
-ReactDOM.render(r(App), document.getElementById('mountNode'));
+const App = React.createFactory(require('./components/app'));
+
+const node = document.body.appendChild(document.createElement('div'));
+
+ReactDOM.render(App(), node);
